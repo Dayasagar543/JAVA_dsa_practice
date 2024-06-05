@@ -1,4 +1,5 @@
-package JAVA_dsa_practice.Basics;
+package JAVA_dsa_practice.basics;
+
 
 public class Arthematic {
  public static void main(String[] args) {

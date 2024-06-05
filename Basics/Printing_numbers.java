@@ -1,4 +1,4 @@
-package JAVA_dsa_practice.Basics;
+package JAVA_dsa_practice.basics;
 
 public class Printing_numbers {
  public static void main(String[] args) {
