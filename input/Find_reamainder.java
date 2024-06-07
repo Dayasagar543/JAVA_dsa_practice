@@ -12,5 +12,6 @@ public class Find_reamainder {
         int quotient =dividend/divisor;
         int remainder=dividend-(divisor*quotient);
         System.out.println(remainder);
+        sc.close();
     }
 }
