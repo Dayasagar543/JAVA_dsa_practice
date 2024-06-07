@@ -1,4 +1,4 @@
-package JAVA_dsa_practice.conditionals;
+
 
 import java.util.Scanner;
 
@@ -7,13 +7,13 @@ public class Profit_Loss {
         Scanner sc =new Scanner(System.in);
         System.out.println("please input the selling price");
         int selling_price=sc.nextInt();
-        System.out.println("please input the Buying price");
-        int Buying_price=sc.nextInt();
-        if(selling_price>Buying_price){
-            System.out.println("profit "+(selling_price-Buying_price) );
+        System.out.println("please input the cost price");
+        int cost_price=sc.nextInt();
+        if(selling_price>cost_price){
+            System.out.println("made profit "+(selling_price-cost_price) +" rs");
         }
-        else if(selling_price<Buying_price){
-            System.out.println("loss "+(selling_price-Buying_price) );
+        else if(selling_price<cost_price){
+            System.out.println("incurred loss "+(selling_price-cost_price) +"  rs" );
         }else{
             System.out.println("no profit no loss");
         }
