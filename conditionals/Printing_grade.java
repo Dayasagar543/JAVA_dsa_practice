@@ -1,3 +1,4 @@
+package JAVA_dsa_practice.conditionals;
 import java.util.Scanner;
 
 public class Printing_grade {
