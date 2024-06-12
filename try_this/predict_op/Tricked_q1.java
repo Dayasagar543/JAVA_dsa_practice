@@ -8,7 +8,7 @@ public class Tricked_q1 {
   if(a>=400)
      b=300;
      c=200;
-     System.out.println(b+" "+c);//error
+    // System.out.println(b+" "+c);//error
 
     }
     
