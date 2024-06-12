@@ -13,7 +13,7 @@ public class Stream_int {
             if (val == -1) {
                 flag=false;
                 System.out.println("the sum is  "+sum);
-                break;
+                break;//break
             } else {
                 sum = sum + val;
                 System.out.println(sum); 
