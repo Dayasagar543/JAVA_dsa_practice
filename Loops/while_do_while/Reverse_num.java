@@ -1,3 +1,4 @@
+package JAVA_dsa_practice.Loops.while_do_while;
 import java.util.Scanner;
 
 public class Reverse_num {
