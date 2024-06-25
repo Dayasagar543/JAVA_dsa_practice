@@ -39,19 +39,31 @@ public class Main {
 
         // checking if it is a sorted array or not
         int[] arr3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        int[] arr4 = { 1, 2, 5, 68, 3, 4, 5, 6, 7, 8, 9 };
+        int[] arr4 = { 1, 2, 5, 68, 3, 4, 5, 6, 7, 8, 9, 0 };
         Sorting_array sa = new Sorting_array();
         System.out.println("Is the array sorted " + sa.sort_arr(arr2));
         System.out.println("Is the array sorted " + sa.sort_arr(arr3));
         System.out.println("Is the array sorted " + sa.sort_arr(arr4));
 
         // finding the smallest and the largest
-        Smallest__largest_ele se = new Smallest__largest_ele();//this line return an array memory adress so you need to collect into variable and loop over it
-        for (int i :se.smallest_largest(arr4)) {
+        Smallest__largest_ele se = new Smallest__largest_ele();// this line return an array memory adress so you need to
+                                                               // collect into variable and loop over it
+        for (int i : se.smallest_largest(arr4)) {
             System.out.println(i);
         }
-        for (int i :se.smallest_largest(arr3)) {
+        for (int i : se.smallest_largest(arr3)) {
             System.out.println(i);
         }
+
+        //target sum of two numbers
+        Target_sum ts = new Target_sum();
+        System.out.println("The possiblities of target  "+ts.sum_target(arr4, 5));
+        
+        //target sum of three numbers
+        Triplet_sum_target trs=new Triplet_sum_target();
+        System.out.println("The possiblities of target of 3 numbers "+trs.sum_Triple(arr4, 9));
+        int[]array5={1,4,5,6,3};
+        System.out.println("The possiblities of target of 3 numbers "+trs.sum_Triple(array5, 12));
+
     }
 }
