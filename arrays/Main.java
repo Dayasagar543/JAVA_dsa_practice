@@ -55,15 +55,41 @@ public class Main {
             System.out.println(i);
         }
 
-        //target sum of two numbers
+        // target sum of two numbers
         Target_sum ts = new Target_sum();
-        System.out.println("The possiblities of target  "+ts.sum_target(arr4, 5));
-        
-        //target sum of three numbers
-        Triplet_sum_target trs=new Triplet_sum_target();
-        System.out.println("The possiblities of target of 3 numbers "+trs.sum_Triple(arr4, 9));
-        int[]array5={1,4,5,6,3};
-        System.out.println("The possiblities of target of 3 numbers "+trs.sum_Triple(array5, 12));
+        System.out.println("The possiblities of target  " + ts.sum_target(arr4, 5));
 
+        // target sum of three numbers
+        Triplet_sum_target trs = new Triplet_sum_target();
+        System.out.println("The possiblities of target of 3 numbers " + trs.sum_Triple(arr4, 9));
+        int[] array5 = { 1, 4, 5, 6, 3 };
+        System.out.println("The possiblities of target of 3 numbers " + trs.sum_Triple(array5, 12));
+
+        int[] array6 = { 1, 2, 3, 4, 6, 4, 3, 2, 1 };
+        Repeated rp = new Repeated();
+        System.out.println("The non repeated number of the array  " + rp.repeated(array6));
+
+        // System.out.println(Integer.MIN_VALUE);
+        // System.out.println(Integer.MAX_VALUE);
+
+        Max_value mv=new Max_value();
+        int maximum=mv.find_max(array5);
+        Second_max smm=new Second_max();
+        System.out.println("The second maximum values is "+smm.second_max(array5, maximum));
+
+        //second max problem checking 2
+        int array7[] = { 1, 2, 3, 4, 7,6, 4, 3, 2, 1 };
+        int maximum1=mv.find_max(array7);
+        System.out.println("The second maximum values is "+smm.second_max(array7, maximum1));
+
+        int [] array8={1,3,5,6,7,8,7,29,5,5,5,4,4,3,5,6,6,5,4,4,4};
+        int [] array9={1,5,3,5,6,7,8,7,29,5,5,5,4,4,3,5,6,6,5,4,4,4};
+       Find_firstRepeated Fr=new Find_firstRepeated();
+       System.out.println("The repeated number"+Fr.reapeated(array8));
+       System.out.println("The repeated number"+Fr.reapeated(array9));
+       
+
+
+        
     }
 }
