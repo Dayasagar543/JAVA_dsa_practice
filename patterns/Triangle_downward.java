@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Triangle_downward {
@@ -6,14 +7,14 @@ public class Triangle_downward {
         System.out.println("provide the side of the triangle");
         int side_triagle = sc.nextInt();
         // for (int i = side_triagle; i>0; i--) {
-        //     for (int j = 1; j <= i; j++) {
-        //         System.out.print(" * ");
-        //     }
-        //     System.out.println();
+        // for (int j = 1; j <= i; j++) {
+        // System.out.print(" * ");
+        // }
+        // System.out.println();
         // }
 
         for (int i = 1; i <= side_triagle; i++) {
-            for (int j = 1; j <=(side_triagle+1-i); j++) {
+            for (int j = 1; j <= (side_triagle + 1 - i); j++) {
                 System.out.print(" * ");
             }
             System.out.println();
@@ -21,5 +22,5 @@ public class Triangle_downward {
 
         sc.close();
     }
-    
+
 }

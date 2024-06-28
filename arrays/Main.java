@@ -1,5 +1,8 @@
 package JAVA_dsa_practice.arrays;
 
+import JAVA_dsa_practice.arrays.imp_Misslenious_prolems.Swap_a_b;
+import JAVA_dsa_practice.arrays.imp_Misslenious_prolems.Swap_sum_differ;
+
 public class Main {
     public static void main(String[] args) {
         // arrays 1d
@@ -72,24 +75,39 @@ public class Main {
         // System.out.println(Integer.MIN_VALUE);
         // System.out.println(Integer.MAX_VALUE);
 
-        Max_value mv=new Max_value();
-        int maximum=mv.find_max(array5);
-        Second_max smm=new Second_max();
-        System.out.println("The second maximum values is "+smm.second_max(array5, maximum));
+        // finding the second max value
+        Max_value mv = new Max_value();
+        int maximum = mv.find_max(array5);
+        Second_max smm = new Second_max();
+        System.out.println("The second maximum values is " + smm.second_max(array5, maximum));
 
-        //second max problem checking 2
-        int array7[] = { 1, 2, 3, 4, 7,6, 4, 3, 2, 1 };
-        int maximum1=mv.find_max(array7);
-        System.out.println("The second maximum values is "+smm.second_max(array7, maximum1));
+        // second max problem checking 2
+        int array7[] = { 1, 2, 3, 4, 7, 6, 4, 3, 2, 1 };
+        int maximum1 = mv.find_max(array7);
+        System.out.println("The second maximum values is " + smm.second_max(array7, maximum1));
 
-        int [] array8={1,3,5,6,7,8,7,29,5,5,5,4,4,3,5,6,6,5,4,4,4};
-        int [] array9={1,5,3,5,6,7,8,7,29,5,5,5,4,4,3,5,6,6,5,4,4,4};
-       Find_firstRepeated Fr=new Find_firstRepeated();
-       System.out.println("The repeated number"+Fr.reapeated(array8));
-       System.out.println("The repeated number"+Fr.reapeated(array9));
-       
+        int[] array8 = { 1, 2, 5, 6, 7, 8, 7, 29, 5, 5, 5, 4, 4, 5, 6, 6, 5, 4, 4, 4 };
+        int[] array9 = { 1, 5, 3, 5, 6, 7, 8, 7, 29, 5, 5, 5, 4, 4, 3, 5, 6, 6, 5, 4, 4, 4 };
+        Find_firstRepeated Fr = new Find_firstRepeated();
+        System.out.println("The repeated number" + Fr.reapeated(array8));
+        System.out.println("The repeated number" + Fr.reapeated(array9));
 
+        // second smallest value
 
-        
+        Min_value miv = new Min_value();
+        int minimum = miv.MinValue(array9);
+        Second_min smin = new Second_min();
+        System.out.println("The second min vlaue of the array is " + smin.second_min(array9, minimum));
+        int minimum1 = miv.MinValue(array8);
+        System.out.println("The second min vlaue of the array is " + smin.second_min(array8, minimum1));
+
+        // swapping
+
+        Swap_a_b sw = new Swap_a_b();
+        sw.swap(3, 4);
+
+       //swapping using the sum and difference method
+        Swap_sum_differ smd= new Swap_sum_differ();
+       smd.swap_sum_diff(5, 6);
     }
 }
