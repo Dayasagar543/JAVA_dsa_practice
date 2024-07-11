@@ -17,9 +17,12 @@ public class Main {
         int[][] input_array2 = ar.generate_values_2dArray();
         ar.printing_2dArray(input_array2);
 
-        int[][] input_array3 = ar.sum_array(input_array1, input_array2);
         System.out.println("printing the sum of values");
-        ar.printing_2dArray(input_array3);
+        ar.sum_mat(input_array1, input_array2);
+        System.out.println("printing the sub of values");
+        ar.sub_mat(input_array1, input_array2);
+        System.out.println("printing the mul of values");
+        ar.mul_mat(input_array1, input_array2);
 
     }
 

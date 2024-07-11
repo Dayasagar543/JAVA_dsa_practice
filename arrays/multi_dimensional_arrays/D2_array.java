@@ -52,45 +52,63 @@ public class D2_array {
         return array;
     }
 
-    public int[][] sum_mat(int array1[][], int rows1, int columns1, int array2[][], int rows2, int columns2) {
-        int[][] array3 = new int[array1.length][array2.length];
-        if (rows1 == rows2 && columns1 == columns2) {
-            for (int i = 0; i < array3.length; i++) {
-                for (int j = 0; j < array3[i].length; j++) {
-                    array3[i][j] = (array1[i][j] + array2[i][j]);
-                }
+    public void sum_mat(int array1[][], int array2[][]) {
+        int rows1 = array1.length, rows2 = array2.length;
+        int columns1 = array1[0].length, columns2 = array2[0].length;
+        if (rows1 != rows2 && columns1 != columns2) {
+            System.out.println("addition is not possbile");
+            return;
+        }
+        int[][] array3 = new int[rows1][columns1];
+
+        for (int i = 0; i < array3.length; i++) {
+            for (int j = 0; j < array3[i].length; j++) {
+                array3[i][j] = (array1[i][j] + array2[i][j]);
             }
         }
 
-        return array3;
+        D2_array d2 = new D2_array();
+        d2.printing_2dArray(array3);
+
     }
 
-    public int[][] sub_mat(int array1[][], int rows1, int columns1, int array2[][], int rows2, int columns2) {
-        int[][] array3 = new int[array1.length][];
-        {
-            if (rows1 == rows2 && columns1 == columns2)
-                for (int i = 0; i < array3.length; i++) {
-                    for (int j = 0; j < array3[i].length; j++) {
-                        array3[i][j] = (array1[i][j] - array2[i][j]);
-                    }
-                }
+    public void sub_mat(int array1[][], int array2[][]) {
+        int rows1 = array1.length, rows2 = array2.length;
+        int columns1 = array1[0].length, columns2 = array2[0].length;
+        if (rows1 != rows2 && columns1 != columns2) {
+            System.out.println("subtraction is not possbile");
+            return;
+        }
+        int[][] array3 = new int[rows1][columns1];
+
+        for (int i = 0; i < array3.length; i++) {
+            for (int j = 0; j < array3[i].length; j++) {
+                array3[i][j] = (array1[i][j] - array2[i][j]);
+            }
         }
 
-        return array3;
+        D2_array d2 = new D2_array();
+        d2.printing_2dArray(array3);
+
     }
 
-    public int[][] mul_array(int array1[][], int rows1, int columns1, int array2[][], int rows2, int columns2) {
-        int[][] array3 = new int[array1.length][];
-        {
-            if (rows1 == columns2)
-                for (int i = 0; i < array3.length; i++) {
-                    for (int j = 0; j < array3[i].length; j++) {
-                        array3[i][j] = (array1[i][j] * array2[i][j]);
-                    }
-                }
+    public void mul_mat(int array1[][], int array2[][]) {
+        int rows2 = array2.length;// rows of second matrix
+        int columns1 = array1[0].length;// columns of first matrix
+        if (rows2 != columns1) {
+            System.out.println("multiplication is not possible");
+            return;
+        }
+        int[][] array3 = new int[columns1][rows2];
+
+        for (int i = 0; i < array3.length; i++) {
+            for (int j = 0; j < array3[i].length; j++) {
+                array3[i][j] = (array1[i][j] * array2[j][i]);
+            }
         }
 
-        return array3;
+        D2_array d2 = new D2_array();
+        d2.printing_2dArray(array3);
     }
 
 }
