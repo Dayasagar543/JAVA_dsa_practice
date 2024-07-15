@@ -1,5 +1,6 @@
 package JAVA_dsa_practice.arrays.multi_dimensional_arrays;
 
+// import java.security.PublicKey;
 import java.util.Scanner;
 
 public class D2_array {
@@ -14,6 +15,7 @@ public class D2_array {
 
     }
 
+    // reading the input values from the user
     public int[][] reading_values_2dArray() {
         // taking input for the number of rows and columns
         Scanner sc = new Scanner(System.in);
@@ -34,6 +36,7 @@ public class D2_array {
         return array;
     }
 
+    // auto generation of values for the matrix
     public int[][] generate_values_2dArray() {
         // taking input for the number of rows and columns
         Scanner sc = new Scanner(System.in);
@@ -52,6 +55,7 @@ public class D2_array {
         return array;
     }
 
+    // matrix addition
     public void sum_mat(int array1[][], int array2[][]) {
         int rows1 = array1.length, rows2 = array2.length;
         int columns1 = array1[0].length, columns2 = array2[0].length;
@@ -72,6 +76,7 @@ public class D2_array {
 
     }
 
+    // matrix subtraction
     public void sub_mat(int array1[][], int array2[][]) {
         int rows1 = array1.length, rows2 = array2.length;
         int columns1 = array1[0].length, columns2 = array2[0].length;
@@ -92,18 +97,22 @@ public class D2_array {
 
     }
 
+    // matrix multiplication
     public void mul_mat(int array1[][], int array2[][]) {
-        int rows2 = array2.length;// rows of second matrix
-        int columns1 = array1[0].length;// columns of first matrix
+        int rows1 = array1.length, rows2 = array2.length;// rows of second matrix
+        int columns1 = array1[0].length, columns2 = array2[0].length;// columns of first matrix
         if (rows2 != columns1) {
             System.out.println("multiplication is not possible");
             return;
         }
-        int[][] array3 = new int[columns1][rows2];
+        int[][] array3 = new int[rows1][columns2];
 
         for (int i = 0; i < array3.length; i++) {
             for (int j = 0; j < array3[i].length; j++) {
-                array3[i][j] = (array1[i][j] * array2[j][i]);
+                for (int k = 0; k < columns1; k++) {
+
+                    array3[i][j] += (array1[i][k] * array2[k][j]);
+                }
             }
         }
 
@@ -111,4 +120,37 @@ public class D2_array {
         d2.printing_2dArray(array3);
     }
 
+    // reverse the sub array
+    public void reverse_2dArray(int[][] array) {
+        int row1 = array.length;
+        int j = 0, k = array[0].length - 1;
+        Swap_mul sm = new Swap_mul();
+        for (int i = 0; i < row1; i++) {
+            while (j <= k) {
+
+                sm.swap_mul(array, i, j, k);
+                j++;
+                k--;
+            }
+        }
+        D2_array d2 = new D2_array();
+        d2.printing_2dArray(array);
+    }
+
+    // transpose
+    public int[][] transpose(int[][] array) {
+        int rows = array.length, columns = array[0].length;
+        int[][] out_array = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                out_array[i][j] = array[j][i];
+            }
+        }
+        return out_array;
+    }
+
+    // place transpose
+    public int[][] inplace_transpose(int[][] array) {
+        return array;
+    }
 }

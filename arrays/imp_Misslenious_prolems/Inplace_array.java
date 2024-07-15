@@ -11,16 +11,16 @@ public class Inplace_array {
 
     public int[] array_inplace(int[] array,int i,int j) {
         // int i , j = array.length - 1;
-        // while (i < j) {
-        //     swap_in_array(array, i, j);
-        //     i++;
-        //     j--;
-        // }
-
-        for(i=0;i<j;i++){
+        while (i < j) {
             swap_in_array(array, i, j);
+            i++;
             j--;
         }
+
+        // for(i=0;i<j;i++){
+        //     swap_in_array(array, i, j);
+        //     j--;
+        // }
 
         return array;
     }
