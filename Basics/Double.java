@@ -1,4 +1,4 @@
-package JAVA_dsa_practice.basics;
+package JAVA_dsa_practice.Basics;
 
 
 public class Double {
