@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class D2_array {
 
+    Swap_mul sm = new Swap_mul();
+
     public void printing_2dArray(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -122,25 +124,31 @@ public class D2_array {
 
     // reverse the sub array
     public void reverse_2dArray(int[][] array) {
+        // outer array length
         int row1 = array.length;
+        // inner array intial and final indexes
         int j = 0, k = array[0].length - 1;
+        // swap class instanciation
         Swap_mul sm = new Swap_mul();
+
+        // loop for outer array
         for (int i = 0; i < row1; i++) {
+            // iteration for inner array
             while (j <= k) {
 
-                sm.swap_mul(array, i, j, k);
+                sm.swap_mul(array, i, j, k);//swapping the values internally so as to reverse the values
                 j++;
                 k--;
             }
         }
         D2_array d2 = new D2_array();
-        d2.printing_2dArray(array);
+        d2.printing_2dArray(array);// priting the array method
     }
 
     // transpose
     public int[][] transpose(int[][] array) {
         int rows = array.length, columns = array[0].length;
-        int[][] out_array = new int[rows][columns];
+        int[][] out_array = new int[columns][rows];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 out_array[i][j] = array[j][i];
@@ -149,8 +157,16 @@ public class D2_array {
         return out_array;
     }
 
-    // place transpose
-    public int[][] inplace_transpose(int[][] array) {
-        return array;
+    // inplace transpose
+    public void inplace_transpose(int[][] array) {
+        int rows = array.length, columns = array[0].length;
+        for (int  i = 0; i < rows; i++) {
+            for (int j = i; j < columns; j++) {
+                int temp=array[i][j];
+                array[i][j]=array[j][i];
+                array[j][i]=temp;
+            }
+        }
+     
     }
 }
