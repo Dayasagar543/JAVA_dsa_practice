@@ -55,6 +55,7 @@ public class D2_array {
             }
         }
         return array;
+        
     }
 
     // matrix addition
@@ -125,18 +126,18 @@ public class D2_array {
     // reverse the sub array
     public void reverse_2dArray(int[][] array) {
         // outer array length
-        int row1 = array.length;
+        int row = array.length;
         // inner array intial and final indexes
         int j = 0, k = array[0].length - 1;
         // swap class instanciation
         Swap_mul sm = new Swap_mul();
 
         // loop for outer array
-        for (int i = 0; i < row1; i++) {
+        for (int i = 0; i < row; i++) {
             // iteration for inner array
             while (j <= k) {
 
-                sm.swap_mul(array, i, j, k);//swapping the values internally so as to reverse the values
+                sm.swap_mul(array,i,j, k);//swapping the values internally so as to reverse the values for 2d array directly we are not passing the sub array into it
                 j++;
                 k--;
             }
