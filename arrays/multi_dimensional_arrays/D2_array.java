@@ -55,7 +55,7 @@ public class D2_array {
             }
         }
         return array;
-        
+
     }
 
     // matrix addition
@@ -137,7 +137,8 @@ public class D2_array {
             // iteration for inner array
             while (j <= k) {
 
-                sm.swap_mul(array,i,j, k);//swapping the values internally so as to reverse the values for 2d array directly we are not passing the sub array into it
+                sm.swap_mul(array, i, j, k);// swapping the values internally so as to reverse the values for 2d array
+                                            // directly we are not passing the sub array into it
                 j++;
                 k--;
             }
@@ -161,13 +162,43 @@ public class D2_array {
     // inplace transpose
     public void inplace_transpose(int[][] array) {
         int rows = array.length, columns = array[0].length;
-        for (int  i = 0; i < rows; i++) {
+        for (int i = 0; i < rows; i++) {
             for (int j = i; j < columns; j++) {
-                int temp=array[i][j];
-                array[i][j]=array[j][i];
-                array[j][i]=temp;
+                int temp = array[i][j];
+                array[i][j] = array[j][i];
+                array[j][i] = temp;
             }
         }
-     
+
+    }
+
+    // rotate 90 degree
+    public void rotate_9_0(int[][] array) {
+        int rows = array.length, columns = array[0].length;
+        if (rows == columns) {
+            for (int i = 0; i < rows; i++) {
+                for (int j = i; j < columns; j++) {
+                    int temp = array[i][j];
+                    array[i][j] = array[j][i];
+                    array[j][i] = temp;
+                }
+            }
+
+            for (int i = 0; i < array.length; i++) {
+                int j = array[i].length - 1, k = 0;
+                while (k < j) {
+                    int temp = array[i][k];
+                    array[i][k] = array[i][j];
+                    array[i][j] = temp;
+                    k++;
+                    j--;
+                }
+            }
+        } else {
+            System.out.println("rotation is not possible");
+
+        }
+        D2_array d2 = new D2_array();
+        d2.printing_2dArray(array);
     }
 }

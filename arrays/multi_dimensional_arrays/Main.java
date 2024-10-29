@@ -33,6 +33,10 @@ public class Main {
         System.out.println("Transposing inplace array");
         ar.inplace_transpose(array6);
         ar.printing_2dArray(array6);
+        int[][] array7 = { { 1, 2, 3 ,4}, { 5, 6 ,7, 8}, {  9,10,11,12 } ,{13,14,15,16}};
+        System.out.println("printing 90 degree rotated array");
+        ar.rotate_9_0(array7);
+        
 
     }
 
