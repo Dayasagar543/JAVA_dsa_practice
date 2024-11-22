@@ -1,6 +1,6 @@
 package JAVA_dsa_practice.Data_structures.stack;
 
-public class Stack {
+public class Stack_static {
     int[] array = new int[5];
     int top = 0;
 
@@ -9,26 +9,29 @@ public class Stack {
             array[top] = value;
             top++;
         } else {
-            System.out.println("ran out of stack indexes");
+            System.out.println("stack is full");
         }
 
     }
 
     public void show() {
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
 
     public int pop() {
         int data = 0;
-        if (top > 0) {
+        if (isempty()) {
+            System.out.println("stack is  empty ");
+
+        } else {
             top--;
             data = array[top];
             array[top] = 0;
-        } else {
-            System.out.println("stack is already empty ");
         }
+
         return data;
     }
 
@@ -40,8 +43,10 @@ public class Stack {
         // i++;
         // }
         // System.out.println(array[i-1]);
-        int data;
-        data = array[top - 1];
+        int data = 0;
+        if (top > 0) {
+            data = array[top - 1];
+        }
         return data;
     }
 
@@ -49,7 +54,7 @@ public class Stack {
         return top;
     }
 
-    public boolean isempty(){
-return
+    public boolean isempty() {
+        return top <= 0 ? true : false;
     }
 }
